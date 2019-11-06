@@ -1,5 +1,4 @@
-import { parse, getSizeAtTrack } from 'grid-template-utils'
-import { getStyles, getGapValue, firstNonZero } from './util'
+import { getStyles, getGapValue, firstNonZero, getSizeAtTrack, parse } from './util'
 import getMatchedCSSRules from './getMatchedCSSRules'
 
 const gridTemplatePropColumns = 'grid-template-columns'

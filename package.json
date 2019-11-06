@@ -1,17 +1,28 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "name": "split-grid",
+  "version": "1.0.10-nick",
+  "description": "The spiritual successor of Split.js, built for CSS Grid",
+  "main": "dist/split-grid.js",
+  "minified:main": "dist/split-grid.min.js",
+  "module": "dist/split-grid.es.js",
   "scripts": {
-    "build": "lerna run build",
-    "test": "lerna run test",
-    "lint": "lerna run lint",
-    "saucelabs": "lerna run saucelabs"
+    "build": "rollup -c && npm run size",
+    "watch": "rollup -cw",
+    "test": "jest",
+    "lint": "eslint src",
+    "size": "echo \"gzip size: $(gzip-size --raw $npm_package_minified_main) bytes\""
   },
-  "version": "1.0.0",
-  "main": "index.js",
+  "repository": "https://github.com/nathancahill/split",
+  "author": "Nathan Cahill <nathan@nathancahill.com>",
+  "homepage": "https://split.js.org/",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/splitjs"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
@@ -24,16 +35,8 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
     "gzip-size-cli": "^3.0.0",
-    "jasmine-core": "2.6.4",
     "jest": "^23.6.0",
-    "karma": "^3.1.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-firefox-launcher": "^1.1.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-sauce-launcher": "^2.0.2",
-    "lerna": "^3.15.0",
     "prettier": "1.14.3",
-    "react": "^16.6.1",
     "rollup": "^0.66.5",
     "rollup-plugin-buble": "^0.19.4",
     "rollup-plugin-node-resolve": "^3.4.0",
